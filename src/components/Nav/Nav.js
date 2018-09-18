@@ -57,7 +57,7 @@ class Nav extends Component {
         style={stickyStyles}
       >
         <div className="magic-wand bounce-xy" onClick={(e) => switchTheme()}>
-          <img src={rhino}/>
+          <img src={rhino} alt="rhino icon"/>
           <div className="magic-text">Color Me</div>
         </div>
         <style jsx="true">

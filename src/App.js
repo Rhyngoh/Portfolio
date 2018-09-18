@@ -1,16 +1,30 @@
 import React, { Component } from 'react';
-// import './App.css';
+import LandingPage from '@pages/LandingPage';
+import AboutPage from '@pages/AboutPage';
+import PortfolioPage from '@pages/PortfolioPage';
+import ProjectPage from '@pages/ProjectPage';
+import ParallaxBackground from '@components/ParallaxBackground';
+import ScrollTop from '@components/ScrollTop';
+import ThemeSwitcher from '@components/ThemeSwitcher';
+import Browser from '@components/Browser';
+import Footer from '@components/Footer';
 
 class App extends Component {
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="dev-landing-page">
+        <ThemeSwitcher>
+          <Browser except firefox>
+            <ParallaxBackground />
+          </Browser>
+          <LandingPage />
+          <AboutPage />
+          <PortfolioPage />
+          <ProjectPage />
+          <ScrollTop />
+          <Footer />
+        </ThemeSwitcher>
       </div>
     );
   }

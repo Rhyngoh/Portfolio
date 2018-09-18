@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { toElement as scrollToElement } from '@utils/scroll';
-
+import rhino from './../../images/rhino.png';
 import './style.scss';
 
 class Nav extends Component {
@@ -57,7 +57,7 @@ class Nav extends Component {
         style={stickyStyles}
       >
         <div className="magic-wand bounce-xy" onClick={(e) => switchTheme()}>
-          <button className="fas fa-magic fa-lg" href="#" />
+          <img src={rhino}/>
           <div className="magic-text">Color Me</div>
         </div>
         <style jsx="true">
@@ -79,6 +79,12 @@ class Nav extends Component {
             onClick={(e) => this.scrollToPage('.portfolio-page')}
           >
             Portfolio
+          </div>
+          <div
+            className="menu__item"
+            onClick={(e) => this.scrollToPage('.project-page')}
+          >
+            Projects
           </div>
         </div>
       </nav>

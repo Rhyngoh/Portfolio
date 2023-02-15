@@ -14,7 +14,7 @@ const ProjectPage = (props, context) => {
   return (
     <div className="project-page" style={{ backgroundColor: bgPrimary }}>
       <div className="content-grid">
-        <h1 style={{ color: colorPrimary }}>Projects</h1>
+        <h1 style={{ color: colorPrimary }}>UT Coding Bootcamp Projects</h1>
         <div className="portfolio-wrapper">
           <style jsx="true">
             {`

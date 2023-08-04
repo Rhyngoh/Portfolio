@@ -1,12 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import ScrollToNext from '@components/ScrollToNext';
 import './style.scss';
-
-const AboutPage = (props, context) => {
+import { useThemeContext } from '../../components/ThemeSwitcher/ThemeSwitcher';
+import ScrollToNext from '../../components/ScrollToNext/ScrollToNext';
+const AboutPage = (props) => {
+  const { theme } = useThemeContext();
   const {
-    theme: { colorPrimary, colorHighlight, bgPrimary, textPrimary }
-  } = context;
+    colorPrimary,
+    colorHighlight,
+    bgPrimary,
+    textPrimary,
+  } = theme;
 
   return (
     <div className="about-page" style={{ backgroundColor: bgPrimary }}>
@@ -34,7 +37,7 @@ const AboutPage = (props, context) => {
               I am a <span className="highlight">Fullstack Developer</span> focused on the Front-end with experience building applications using React, MongoDB, Express, and Node.js. I have experience with various technologies such as AWS, Firebase, Google Maps API, Solidity, ASP.NET.
             </p>
             <p>
-              Outside of coding, I enjoy <span className="highlight">Board Games</span> and <span className="highlight">Baking</span> desserts! 
+              Outside of coding, I enjoy <span className="highlight">Board Games</span>, <span className="highlight">Escape Rooms</span>, and <span className="highlight">Baking</span> desserts! 
             </p>
           </div>
         </div>
@@ -42,10 +45,6 @@ const AboutPage = (props, context) => {
       <ScrollToNext pageSelector=".portfolio-page" />
     </div>
   );
-};
-
-AboutPage.contextTypes = {
-  theme: PropTypes.any
 };
 
 export default AboutPage;

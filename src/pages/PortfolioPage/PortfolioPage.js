@@ -1,15 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import PortfolioItem from '@components/PortfolioItem';
-import ScrollToNext from '@components/ScrollToNext';
-import portfolioItems from './portfolio-items';
+import React from "react";
+import portfolioItems from "./portfolio-items";
+import PortfolioItem from "../../components/PortfolioItem/PortfolioItem";
+import ScrollToNext from "../../components/ScrollToNext/ScrollToNext";
+import { useThemeContext } from "../../components/ThemeSwitcher/ThemeSwitcher";
+import "./style.scss";
 
-import './style.scss';
-
-const PortfolioPage = (props, context) => {
-  const {
-    theme: { colorPrimary, colorAlternate, textAlternate, bgPrimary }
-  } = context;
+const PortfolioPage = (props) => {
+  const { theme } = useThemeContext();
+  const { colorPrimary, colorAlternate, textAlternate, bgPrimary } = theme;
 
   return (
     <div className="portfolio-page" style={{ backgroundColor: bgPrimary }}>
@@ -38,10 +36,6 @@ const PortfolioPage = (props, context) => {
       <ScrollToNext pageSelector=".project-page" />
     </div>
   );
-};
-
-PortfolioPage.contextTypes = {
-  theme: PropTypes.any
 };
 
 export default PortfolioPage;

@@ -1,100 +1,75 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { toElement as scrollToElement } from '@utils/scroll';
-import rhino from './../../images/rhino.png';
-import './style.scss';
+import React, { useState, useEffect, useRef, useMemo } from "react";
+import { toElement as scrollToElement } from "../../utils/scroll";
+import rhino from "./../../images/rhino.png";
+import "./style.scss";
+import { useThemeContext } from "../ThemeSwitcher/ThemeSwitcher";
 
-class Nav extends Component {
-  constructor(props) {
-    super(props);
-    this.handleScroll = this.handleScroll.bind(this);
-    this.state = {
-      isSticky: false
+const Nav = (props) => {
+  const { theme, switchTheme } = useThemeContext();
+  const { navAlpha, colorPrimary, bgPrimary } = theme;
+  const [isSticky, setSticky] = useState(false);
+  const nav = useRef(null);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", () => handleScroll);
     };
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
-
-  handleScroll() {
-    if (window.pageYOffset > this.nav.offsetTop) {
-      this.setState({
-        isSticky: true
-      });
+  }, []);
+  const handleScroll = () => {
+    if (window.scrollY > nav?.current?.offsetTop) {
+      setSticky(true);
     } else {
-      this.setState({
-        isSticky: false
-      });
+      setSticky(false);
     }
-  }
-
-  scrollToPage(pageSelector) {
+  };
+  const scrollToPage = (pageSelector) => {
     const nextPage = document.querySelector(pageSelector);
     scrollToElement(nextPage);
-  }
-
-  render() {
-    const {
-      theme: { colorPrimary, bgPrimary, navAlpha },
-      switchTheme
-    } = this.context;
-
-    const stickyClass = this.state.isSticky ? 'sticky' : '';
-    const stickyStyles = this.state.isSticky
+  };
+  const stickyClass = useMemo(() => {
+    return isSticky ? "sticky" : "";
+  }, [isSticky]);
+  const stickyStyles = useMemo(() => {
+    return isSticky
       ? { backgroundColor: navAlpha, color: colorPrimary }
       : { backgroundColor: bgPrimary, color: colorPrimary };
-    return (
-      <nav
-        className={stickyClass}
-        ref={(elem) => {
-          this.nav = elem;
-        }}
-        style={stickyStyles}
-      >
-        <div className="magic-wand bounce-xy" onClick={(e) => switchTheme()}>
-          <img src={rhino} alt="rhino icon"/>
-          <div className="magic-text">Color Me</div>
-        </div>
-        <style jsx="true">
-          {`
-            .menu__item:hover {
-              border-bottom: 2px solid ${colorPrimary};
-            }
-          `}
-        </style>
-        <div className="menu">
-          <div
-            className="menu__item active"
-            onClick={(e) => this.scrollToPage('.about-page')}
-          >
-            About
-          </div>
-          <div
-            className="menu__item"
-            onClick={(e) => this.scrollToPage('.portfolio-page')}
-          >
-            Portfolio
-          </div>
-          <div
-            className="menu__item"
-            onClick={(e) => this.scrollToPage('.project-page')}
-          >
-            Projects
-          </div>
-        </div>
-      </nav>
-    );
-  }
-}
+  }, [isSticky, theme]);
 
-Nav.contextTypes = {
-  theme: PropTypes.any,
-  switchTheme: PropTypes.func
+  return (
+    <nav className={stickyClass} ref={nav} style={stickyStyles}>
+      <div className="magic-wand bounce-xy" onClick={switchTheme}>
+        <img src={rhino} alt="rhino icon" />
+        <div className="magic-text">Color Me</div>
+      </div>
+      <style jsx="true">
+        {`
+          .menu__item:hover {
+            border-bottom: 2px solid ${colorPrimary};
+          }
+        `}
+      </style>
+      <div className="menu">
+        <div
+          className="menu__item active"
+          onClick={(e) => scrollToPage(".about-page")}
+        >
+          About
+        </div>
+        <div
+          className="menu__item"
+          onClick={(e) => scrollToPage(".portfolio-page")}
+        >
+          Portfolio
+        </div>
+        <div
+          className="menu__item"
+          onClick={(e) => scrollToPage(".project-page")}
+        >
+          Projects
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Nav;

@@ -1,22 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-import './style';
-
-const Footer = (props, context) => {
-  const { theme: { colorPrimary, textPrimary } } = context;
+import React from "react";
+import "./style.scss";
+import { useThemeContext } from "../ThemeSwitcher/ThemeSwitcher";
+const Footer = (props) => {
+  const { theme } = useThemeContext();
+  const { colorPrimary, textPrimary } = theme;
   return (
     <footer>
       <div className="content-grid">
-        <div style={{ color: textPrimary }}>Made by <a href="https://github.com/rhyngoh" target="_blank" rel="noopener noreferrer" style={{ color: colorPrimary }}>Ryan Ngoh 2018</a></div>
+        <div style={{ color: textPrimary }}>
+          Made by{" "}
+          <a
+            href="https://github.com/rhyngoh"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: colorPrimary }}
+          >
+            Ryan Ngoh 2023
+          </a>
+        </div>
       </div>
     </footer>
   );
-};
-
-Footer.contextTypes = {
-  theme: PropTypes.any,
-  switchTheme: PropTypes.func
 };
 
 export default Footer;

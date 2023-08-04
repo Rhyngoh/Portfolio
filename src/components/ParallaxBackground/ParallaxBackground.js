@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useThemeContext } from '../ThemeSwitcher/ThemeSwitcher';
+import './style.scss';
 
-import './style';
-
-const ParallaxBackground = (props, context) => {
-  const { theme: { colorPrimary } } = context;
+const ParallaxBackground = (props) => {
+  const { theme } = useThemeContext();
+  const { colorPrimary } = theme;
 
   return (
     <div className="parallax" style={{ color: colorPrimary }}>
@@ -13,10 +13,6 @@ const ParallaxBackground = (props, context) => {
       <div id="stars3" />
     </div>
   );
-};
-
-ParallaxBackground.contextTypes = {
-  theme: PropTypes.any
 };
 
 export default ParallaxBackground;

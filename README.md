@@ -1,4 +1,6 @@
-# Ryan Ngoh's Portfolio
+# Rhyngoh.github.io
+Official gh-pages repository
+
 ## Portfolio Overhaul built using React
 ### Fullstack Dev, Creator, Board gamer, Baker
 ___
@@ -8,7 +10,7 @@ I constantly seek challenges and excited to learn emerging technologies.
 
 I am focused on the Front-end with experience building applications using React, MongoDB, Express, and Node.js; Furthermore, I also have experience in cloud solutions such as AWS and Firebase.
 
-Outside of coding, I enjoy Board Games and Baking desserts!
+Outside of coding, I enjoy Board Games, Escape Rooms, and Baking desserts!
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=rhyngoh&label=Profile%20views&color=0e75b6&style=flat" alt="rhyngoh" /> </p>
 

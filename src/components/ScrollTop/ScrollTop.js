@@ -1,55 +1,43 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { toTop as scrollToPageTop } from '@utils/scroll';
-
-import './style.scss';
-
-class ScrollTop extends Component {
-  constructor(props) {
-    super(props);
-    this.handleScroll = this.handleScroll.bind(this);
-    this.state = {
-      shouldShowScrollTopArrow: false
+import React, { useState, useEffect, useMemo } from "react";
+import { toTop as scrollToPageTop } from "../../utils/scroll";
+import "./style.scss";
+import { useThemeContext } from "../ThemeSwitcher/ThemeSwitcher";
+import { FiChevronsUp } from "react-icons/fi";
+const ScrollTop = (props) => {
+  const [shouldShowScrollTopArrow, setShouldShowScrollTopArrow] =
+    useState(false);
+  const { theme } = useThemeContext();
+  const { colorPrimary } = theme;
+  const hideArrowClass = useMemo(
+    () => (shouldShowScrollTopArrow ? "" : "hide"),
+    [shouldShowScrollTopArrow]
+  );
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", () => handleScroll);
     };
-  }
-
-  handleScroll() {
+  }, []);
+  const handleScroll = () => {
     const boundingRect = ((document || {}).documentElement || {})
       .getBoundingClientRect;
     if (boundingRect) {
       if (document.documentElement.getBoundingClientRect().top * -1 > 100)
-        this.setState({ shouldShowScrollTopArrow: true });
-      else this.setState({ shouldShowScrollTopArrow: false });
+        setShouldShowScrollTopArrow(true);
+      else setShouldShowScrollTopArrow(false);
     }
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
-
-  render() {
-    const { theme: { colorPrimary } } = this.context;
-    const hideArrowClass = this.state.shouldShowScrollTopArrow ? '' : 'hide';
-    return (
-      <div className="scroll-top" onClick={(e) => scrollToPageTop()}>
-        <div
-          className={`arrow ${hideArrowClass}`}
-          style={{ color: colorPrimary }}
-        >
-          <button className="fas fa-angle-double-up fa-2x" href="#" />
-          <div className="to-top">To Top</div>
-        </div>
+  };
+  return (
+    <div className="scroll-top" onClick={scrollToPageTop}>
+      <div
+        className={`arrow ${hideArrowClass}`}
+        style={{ color: colorPrimary }}
+      >
+        <FiChevronsUp size={'2rem'} href={"#"}/>
+        <div className="to-top">To Top</div>
       </div>
-    );
-  }
-}
-
-ScrollTop.contextTypes = {
-  theme: PropTypes.any
+    </div>
+  );
 };
 
 export default ScrollTop;

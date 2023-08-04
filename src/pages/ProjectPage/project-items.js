@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default [{
+const projectItems = [{
   name: 'hot-words',
   render: (
     <div className='portfolio-item'>
@@ -82,3 +82,5 @@ export default [{
     </div>
   )
 }]
+
+export default projectItems;

@@ -1,35 +1,26 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { toElement as scrollToElement } from '@utils/scroll';
+import React from "react";
+import { toElement as scrollToElement } from "./../../utils/scroll";
 
-import './style.scss';
+import "./style.scss";
+import { useThemeContext } from "../ThemeSwitcher/ThemeSwitcher";
+import { FiChevronDown } from "react-icons/fi";
 
-class ScrollToNext extends Component {
-  scrollToNext() {
-    const { pageSelector } = this.props;
+const ScrollToNext = (props) => {
+  const { pageSelector } = props;
+  const { theme } = useThemeContext();
+  const { colorPrimary } = theme;
+  const scrollToNext = () => {
     const nextPage = document.querySelector(pageSelector);
     scrollToElement(nextPage);
-  }
-
-  render() {
-    const { theme: { colorPrimary } } = this.context;
-    return (
-      <div className="scroll-to-next" onClick={(e) => this.scrollToNext()}>
-        <div className="arrow bounce" style={{ color: colorPrimary }}>
-          <div className="scroll-text">Click Me</div>
-          <button className="fas fa-chevron-down fa-2x" href="#" />
-        </div>
+  };
+  return (
+    <div className="scroll-to-next" onClick={scrollToNext}>
+      <div className="arrow bounce" style={{ color: colorPrimary }}>
+        <div className="scroll-text">Click Me</div>
+        <FiChevronDown size={"2rem"} href={"#"} />
       </div>
-    );
-  }
-}
-
-ScrollToNext.propTypes = {
-  pageSelector: PropTypes.string
-};
-
-ScrollToNext.contextTypes = {
-  theme: PropTypes.any
+    </div>
+  );
 };
 
 export default ScrollToNext;

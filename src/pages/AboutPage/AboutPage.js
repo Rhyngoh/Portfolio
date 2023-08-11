@@ -34,7 +34,7 @@ const AboutPage = (props) => {
               I constantly seek challenges and excited to learn emerging technologies.
             </p>
             <p>
-              I am a <span className="highlight">Fullstack Developer</span> focused on the Front-end with experience building applications using React, MongoDB, Express, and Node.js. I have experience with various technologies such as AWS, Firebase, Google Maps API, Solidity, ASP.NET.
+              I am a <span className="highlight">Fullstack Developer</span> focused on the Front-end with experience building applications using React, Next, Express, and Node.js. I have experience with various technologies such as AWS, Firebase, Google Maps API, Solidity, ASP.NET.
             </p>
             <p>
               Outside of coding, I enjoy <span className="highlight">Board Games</span>, <span className="highlight">Escape Rooms</span>, and <span className="highlight">Baking</span> desserts! 

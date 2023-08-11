@@ -13,7 +13,7 @@ const PortfolioPage = (props) => {
     <div className="portfolio-page" style={{ backgroundColor: bgPrimary }}>
       <div className="content-grid">
         <h1 style={{ color: colorPrimary }}>Portfolio</h1>
-        <div className="portfolio-wrapper">
+        <main className="portfolio-wrapper">
           <style jsx="true">
             {`
               .portfolio-item {
@@ -31,7 +31,7 @@ const PortfolioPage = (props) => {
           {portfolioItems.map((item, i) => (
             <PortfolioItem render={item.render} key={i} />
           ))}
-        </div>
+        </main>
       </div>
       <ScrollToNext pageSelector=".project-page" />
     </div>

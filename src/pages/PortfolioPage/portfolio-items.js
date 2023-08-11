@@ -1,11 +1,15 @@
 import React from "react";
+import Amherst from "./../../images/Amherst.jpg";
+import Giddy from "./../../images/Giddy.jpg";
+import Mowse from "./../../images/Mowse.PNG";
 
 const portfolioItems = [
   {
     name: "mowse",
     render: (
-      <div className="portfolio-item">
+      <section className="portfolio-item">
         <div className="portfolio-item__title">Mowse: Founder</div>
+        <img src={Mowse} alt="Mowse" className="portfolio-item__img" />
         <div className="portfolio-item__desc">
           <div>Experience: Oct 2021 - Present</div>
           <div>
@@ -34,7 +38,7 @@ const portfolioItems = [
             More
           </a>
         </div>
-      </div>
+      </section>
     ),
   },
   {
@@ -42,6 +46,7 @@ const portfolioItems = [
     render: (
       <div className="portfolio-item">
         <div className="portfolio-item__title">Giddy: Full Stack Dev</div>
+        <img src={Giddy} alt="Giddy" className="portfolio-item__img" />
         <div className="portfolio-item__desc">
           <div>Experience: Mar 2023 - Present</div>
           <div>
@@ -72,6 +77,7 @@ const portfolioItems = [
     render: (
       <div className="portfolio-item">
         <div className="portfolio-item__title">Amherst: Software Engineer</div>
+        <img src={Amherst} alt="Amherst" className="portfolio-item__img" />
         <div className="portfolio-item__desc">
           <div>Experience: Nov 2018 - Jan 2023</div>
           <div>

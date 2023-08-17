@@ -2,7 +2,9 @@ import React from "react";
 import Amherst from "./../../images/Amherst.jpg";
 import Giddy from "./../../images/Giddy.jpg";
 import Mowse from "./../../images/Mowse.PNG";
-
+import { FaReact, FaCss3Alt, FaHtml5, FaPython, FaNode } from "react-icons/fa";
+import { BiLogoJavascript, BiSolidCheese } from "react-icons/bi";
+import { TbBrandCSharp } from "react-icons/tb";
 const portfolioItems = [
   {
     name: "mowse",
@@ -18,9 +20,10 @@ const portfolioItems = [
           </div>
         </div>
         <div className="portfolio-item__icon">
-          <i className="fab fa-react"></i>
-          <i className="fab fa-css3"></i>
-          <i className="fab fa-js"></i>
+          <FaReact />
+          <FaNode />
+          <BiLogoJavascript />
+          <BiSolidCheese />
         </div>
         <div className="portfolio-item__links">
           <a
@@ -56,9 +59,9 @@ const portfolioItems = [
           </div>
         </div>
         <div className="portfolio-item__icon">
-          <i className="fab fa-react"></i>
-          <i className="fab fa-css3"></i>
-          <i className="fab fa-js"></i>
+          <FaReact />
+          <FaCss3Alt />
+          <BiLogoJavascript />
         </div>
         <div className="portfolio-item__links">
           <a
@@ -87,9 +90,10 @@ const portfolioItems = [
           </div>
         </div>
         <div className="portfolio-item__icon">
-          <i className="fab fa-react"></i>
-          <i className="fab fa-css3"></i>
-          <i className="fab fa-js"></i>
+          <FaReact />
+          <FaCss3Alt />
+          <BiLogoJavascript />
+          <TbBrandCSharp />
         </div>
         <div className="portfolio-item__links">
           <a
@@ -116,10 +120,10 @@ const portfolioItems = [
           </div>
         </div>
         <div className="portfolio-item__icon">
-          <i className="fab fa-html5"></i>
-          <i className="fab fa-css3"></i>
-          <i className="fab fa-js"></i>
-          <i className="fab fa-python"></i>
+          <FaHtml5 />
+          <FaCss3Alt />
+          <BiLogoJavascript />
+          <FaPython />
         </div>
         <div className="portfolio-item__links">
           <a

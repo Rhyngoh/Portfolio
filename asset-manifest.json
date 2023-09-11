@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.d93466c3.css",
-    "main.js": "/Portfolio/static/js/main.c32999e3.js",
+    "main.css": "/Portfolio/static/css/main.a32d9d36.css",
+    "main.js": "/Portfolio/static/js/main.e9f5ad01.js",
     "static/media/Mowse.PNG": "/Portfolio/static/media/Mowse.847356324b28afc53eb3.PNG",
     "static/media/Giddy.jpg": "/Portfolio/static/media/Giddy.ca661c3dc1c811c0a122.jpg",
     "static/media/reem-kufi-v4-latin-regular.woff": "/Portfolio/static/media/reem-kufi-v4-latin-regular.bcabf343cd8e564915dc.woff",
@@ -10,13 +10,13 @@
     "static/media/roboto-900.woff2": "/Portfolio/static/media/roboto-900.0cbfee1a4a6ebde0900b.woff2",
     "static/media/roboto-400.woff2": "/Portfolio/static/media/roboto-400.f0da3b6e60388f7126f5.woff2",
     "static/media/roboto-100.woff2": "/Portfolio/static/media/roboto-100.0d4d10b86740c508af8f.woff2",
-    "static/media/inspireden.svg": "/Portfolio/static/media/inspireden.6afcd1c0efecc158f485799ba281367b.svg",
+    "static/media/inspireden.svg": "/Portfolio/static/media/inspireden.59eaa2ab689a98a70796b9ed64edf7dd.svg",
     "index.html": "/Portfolio/index.html",
-    "main.d93466c3.css.map": "/Portfolio/static/css/main.d93466c3.css.map",
-    "main.c32999e3.js.map": "/Portfolio/static/js/main.c32999e3.js.map"
+    "main.a32d9d36.css.map": "/Portfolio/static/css/main.a32d9d36.css.map",
+    "main.e9f5ad01.js.map": "/Portfolio/static/js/main.e9f5ad01.js.map"
   },
   "entrypoints": [
-    "static/css/main.d93466c3.css",
-    "static/js/main.c32999e3.js"
+    "static/css/main.a32d9d36.css",
+    "static/js/main.e9f5ad01.js"
   ]
 }

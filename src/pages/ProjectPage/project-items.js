@@ -1,10 +1,48 @@
 import React from "react";
 import inspireden from "./../../images/inspireden.svg";
-import { FaReact } from "react-icons/fa";
-import { BiLogoJavascript } from "react-icons/bi";
+import { FaReact, FaNode } from "react-icons/fa";
+import { BiLogoJavascript, BiSolidCheese} from "react-icons/bi";
 import { TbBrandNextjs, TbBrandOpenai } from "react-icons/tb";
-
+import Mowse from "./../../images/Mowse.PNG";
 const projectItems = [
+  {
+    name: "mowse",
+    render: (
+      <section className="portfolio-item">
+        <div className="portfolio-item__title">Mowse: Founder</div>
+        <img src={Mowse} alt="Mowse" className="portfolio-item__img" />
+        <div className="portfolio-item__desc">
+          <div>Experience: Oct 2021 - Present</div>
+          <div>
+            NFT Gaming platform built on the Fantom Blockchain. This is Ryan's
+            personal brand project that he has been working on since 2021
+          </div>
+        </div>
+        <div className="portfolio-item__icon">
+          <FaReact />
+          <FaNode />
+          <BiLogoJavascript />
+          <BiSolidCheese />
+        </div>
+        <div className="portfolio-item__links">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://mowse-game.herokuapp.com/"
+          >
+            Website
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/MowsePack/MowseContracts"
+          >
+            More
+          </a>
+        </div>
+      </section>
+    ),
+  },
   {
     name: "InspirEden",
     render: (
